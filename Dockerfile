@@ -1,4 +1,6 @@
 FROM ubuntu:14.04
-
-
-CMD ["/bin/echo" , "Hi Docker !"]
+RUN apt-get update && apt-get install -y \
+python
+python-pip
+RUN pip install flask
+COPY hello.py /tmp/hello.py
